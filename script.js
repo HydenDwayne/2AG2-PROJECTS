@@ -111,4 +111,3 @@ function showDetails(project, color) {
 // Initialize
 setDate();
 loadProjects();
-
