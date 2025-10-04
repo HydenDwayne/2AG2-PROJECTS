@@ -101,6 +101,7 @@ function showDetails(project, color) {
     <p>${project.description}</p>
     <div class="details-separator"></div>
     <p><strong>Deadline:</strong> ${project.deadline || "Not set"}</p>
+    <p><strong>Type of project:</strong> ${project.task || "n/a"}</p>
     <div class="details-content">
       ${detailsArray.map(d => `<p>${parseFormatting(d)}</p>`).join("")}
     </div>
@@ -110,3 +111,4 @@ function showDetails(project, color) {
 // Initialize
 setDate();
 loadProjects();
+
