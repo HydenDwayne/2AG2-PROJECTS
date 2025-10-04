@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f7f9fc;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Main container */
+.container {
+  width: 90%;
+  max-width: 1000px;   /* smaller width */
+  height: 650px;       /* smaller height */
+  display: flex;
+  gap: 20px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  background: #fff;
+  flex: 1;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sidebar h2 {
+  margin-bottom: 5px;
+}
+
+.date {
+  color: #888;
+  margin-bottom: 20px;
+}
+
+/* Scrollable project list */
+.project-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-right: 10px;
+}
+
+/* ============================= */
+/* Universal Scrollbar Styling   */
+/* ============================= */
+
+/* Firefox */
+* {
+  scrollbar-width: thin;              /* slim */
+  scrollbar-color: #9ca3af #f1f5f9;   /* thumb | track */
+}
+
+/* Webkit (Chrome, Edge, Safari, Opera) */
+.project-list::-webkit-scrollbar,
+.details-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.project-list::-webkit-scrollbar-track,
+.details-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 12px;
+}
+
+.project-list::-webkit-scrollbar-thumb,
+.details-content::-webkit-scrollbar-thumb {
+  background: #9ca3af;  /* gray thumb */
+  border-radius: 12px;
+}
+
+.project-list::-webkit-scrollbar-thumb:hover,
+.details-content::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;  /* darker gray on hover */
+}
+
+/* Project Cards */
+.project-card {
+  border-radius: 16px;
+  color: white;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+.project-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.project-card p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.project-card.blue { background: #3b82f6; }
+.project-card.purple { background: #a855f7; }
+.project-card.yellow { background: #facc15; color: #333; }
+.project-card.red { background: #ef4444; }
+.project-card.green { background: #22c55e; }   /* green */
+.project-card.pink { background: #ec4899; }    /* pink */
+.project-card.teal { background: #14b8a6; }    /* teal */
+.project-card.orange { background: #f97316; }  /* orange */
+.project-card.indigo { background: #6366f1; }  /* indigo */
+
+/* CONTENT */
+.content {
+  background: #fff;
+  flex: 2;
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* DETAILS SECTION */
+.details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* prevent double scroll */
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+
+.details-header button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.details-header button:hover {
+  background: #2563eb;
+}
+
+.details h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+
+.details > p {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.details-separator {
+  height: 1px;
+  background: #e5e7eb;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+/* Scrollable inner details */
+.details-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+  min-height: 0; /* IMPORTANT for scroll to work in flex */
+}
+
+.details-content p {
+  margin-bottom: 10px;
+}
